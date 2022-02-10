@@ -32,7 +32,7 @@
 
     .bio {
         width: 100%;
-        height: 310px;
+        min-height: 310px;
 
     }
 
@@ -76,8 +76,6 @@
 
     .number {
         width: 100%;
-        display: flex;
-        justify-content: flex-end;
     }
 </style>
 <div style="width: 100%; max-width: 960px; margin: auto" id="app">

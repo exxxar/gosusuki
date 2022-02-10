@@ -10,11 +10,11 @@
             <div class="col-12 m-0 p-0" v-if="step===0">    <form v-on:submit.prevent="submit" ref="form">
                 <p class="title">Ваше Ф.И.О.<span style="color:red; font-weight: bolder;">*</span></p>
                 <div class="row">
-                    <div class="col-md-4 col-12"><input type="text" class="form-control" placeholder="Иванов" name="name"
+                    <div class="col-md-4 col-12 mb-2"><input type="text" class="form-control" placeholder="Иванов" name="name"
                                               v-model="form.first_name" id="first_name" required></div>
-                    <div class="col-md-4 col-12"><input type="text" class="form-control" placeholder="Иван" name="name"
+                    <div class="col-md-4 col-12 mb-2"><input type="text" class="form-control" placeholder="Иван" name="name"
                                               v-model="form.second_name" id="second_name" required></div>
-                    <div class="col-md-4 col-12"><input type="text" class="form-control" placeholder="Иванович" name="name"
+                    <div class="col-md-4 col-12 mb-2"><input type="text" class="form-control" placeholder="Иванович" name="name"
                                               v-model="form.last_name" id="last_name" required></div>
                 </div>
 
@@ -68,13 +68,13 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-12 qr">
+                    <div class="col-md-6 col-12 qr p-5">
                         <slot name="qr"></slot>
                     </div>
                 </div>
 
-                <div class="number">
-                    <h5>№ {{ form.cert_number }} </h5>
+                <div class="number mt-2">
+                    <h5 class="text-center text-md-right">№ {{ form.cert_number }} </h5>
                 </div>
                 <hr>
                 <h2>Информация о профилактических прививках против новой<br>короновирусной инфекции (COVID-19)</h2>
@@ -161,7 +161,7 @@
 
                     <div class="row d-flex justify-content-center">
 
-                        <div class="col-3">
+                        <div class="col-md-3 col-12">
 
                             <input class="form-control" type="search"
                                    v-model="search_number"
@@ -170,7 +170,7 @@
                     </div>
 
                     <div class="row d-flex justify-content-center mt-2">
-                        <div class="col-3">
+                        <div class="col-md-3 col-12">
                             <button class="btn btn-outline-info w-100">Найти</button>
                         </div>
                     </div>
