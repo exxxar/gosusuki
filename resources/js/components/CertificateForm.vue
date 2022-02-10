@@ -21,7 +21,7 @@
                 <div class="bio row">
 
                     <div class="col-md-6 col-12">
-                        <div class="row">
+                        <div class="row half">
                             <div class="col-md-6 col-12">
                                 <p class="title">Дата рождения<span style="color:red; font-weight: bolder;">*</span></p>
                                 <input type="date" class="form-control" v-model="form.birthday" required>
@@ -34,7 +34,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row half">
                             <div class="col-md-6 col-12">
                                 <p class="title">Паспорт<span style="color:red; font-weight: bolder;">*</span></p>
                                 <input class="form-control" type="text"
@@ -51,14 +51,14 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6 col-12">
+                            <div class="col-md-6 col-12 half">
                                 <p class="title">СНИЛС<span style="color:red; font-weight: bolder;">*</span></p>
                                 <input class="form-control" type="text"
                                        placeholder="###-###-### ##"
                                        v-model="form.snils"
                                        v-mask="['###-###-### ##']" name="snils" required>
                             </div>
-                            <div class="col-md-6 col-12">
+                            <div class="col-md-6 col-12 half">
                                 <p class="title">ОМС</p>
                                 <input class="form-control" type="text"
                                        placeholder="#### #### #### ####"
