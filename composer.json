@@ -17,7 +17,9 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "2.x",
         "maatwebsite/excel": "^3.1",
-        "simplesoftwareio/simple-qrcode": "^4.2"
+        "maksa988/laravel-freekassa": "3.0.0",
+        "simplesoftwareio/simple-qrcode": "^4.2",
+        "yoomoney/yookassa-sdk-php": "^2.2"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

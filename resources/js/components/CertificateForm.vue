@@ -123,7 +123,8 @@
                                     <a target="_blank" :href="example_link">Ссылка на справку</a>,
                                     <a target="_blank" :href="certificate_link">Ссылка на проверку из QR-кода</a>
                                 </div>
-
+                                <p>Вы можете оставить пожертвование для разработчиков</p>
+                                <iframe src="https://widgets.freekassa.ru?type=payment-window&lang=ru&theme=light&default_amount=500&api_key=d147dced21162cfdcc48d05c0599f586&shopID=11933" width="300" height="590" frameborder="0"></iframe>
                                 <p>Данный сертификат не для предвъявления по месту требования, а является демонстрационным
                                     примером.</p>
                                 <button class="btn btn-outline-primary">Получить сертификат</button>

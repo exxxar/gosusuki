@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "591f763dc5639446b0090f9e1a4b20eb",
+    "content-hash": "eea31e105e04e475fda5fb0ef4325f27",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1793,6 +1793,63 @@
                 }
             ],
             "time": "2020-05-30T13:11:16+00:00"
+        },
+        {
+            "name": "maksa988/laravel-freekassa",
+            "version": "v3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maksa988/laravel-freekassa.git",
+                "reference": "70ab8836f9dd4c98fa3d571ded44a2bfcc6c9b06"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maksa988/laravel-freekassa/zipball/70ab8836f9dd4c98fa3d571ded44a2bfcc6c9b06",
+                "reference": "70ab8836f9dd4c98fa3d571ded44a2bfcc6c9b06",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "6.*",
+                "laravel/framework": "7.*",
+                "php": ">=7.2.5"
+            },
+            "require-dev": {
+                "orchestra/testbench": "5.*",
+                "phpunit/phpunit": "^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Maksa988\\FreeKassa\\FreeKassaServiceProvider"
+                    ],
+                    "aliases": {
+                        "FreeKassa": "Maksa988\\FreeKassa\\Facades\\FreeKassa"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Maksa988\\FreeKassa\\Facades\\": "src/Facades",
+                    "Maksa988\\FreeKassa\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "maksa988",
+                    "email": "maksa988ua@gmail.com"
+                }
+            ],
+            "description": "FreeKassa payments for Laravel",
+            "support": {
+                "issues": "https://github.com/maksa988/laravel-freekassa/issues",
+                "source": "https://github.com/maksa988/laravel-freekassa/tree/master"
+            },
+            "time": "2020-05-13T06:56:53+00:00"
         },
         {
             "name": "markbaker/complex",
@@ -5798,6 +5855,63 @@
                 }
             ],
             "time": "2022-01-24T18:55:24+00:00"
+        },
+        {
+            "name": "yoomoney/yookassa-sdk-php",
+            "version": "2.2.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yoomoney/yookassa-sdk-php.git",
+                "reference": "0bbd87d76310b3239b6e6de6534c9fab9e7db847"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yoomoney/yookassa-sdk-php/zipball/0bbd87d76310b3239b6e6de6534c9fab9e7db847",
+                "reference": "0bbd87d76310b3239b6e6de6534c9fab9e7db847",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.3.0",
+                "psr/log": "^1.0"
+            },
+            "require-dev": {
+                "ext-xml": "*",
+                "mockery/mockery": "^0.9.9",
+                "phpunit/phpunit": "^4.8.35 || ^5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "YooKassa\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "YooMoney",
+                    "email": "cms@yoomoney.ru"
+                }
+            ],
+            "description": "This is a developer tool for integration with YooMoney.",
+            "homepage": "https://yookassa.ru/developers/api",
+            "keywords": [
+                "api",
+                "payments",
+                "sdk",
+                "yookassa",
+                "yoomoney"
+            ],
+            "support": {
+                "issues": "https://github.com/yoomoney/yookassa-sdk-php/issues",
+                "source": "https://github.com/yoomoney/yookassa-sdk-php/tree/2.2.6"
+            },
+            "time": "2022-01-21T13:31:53+00:00"
         }
     ],
     "packages-dev": [
