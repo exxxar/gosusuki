@@ -22,7 +22,7 @@ class CertificateController extends Controller
         if (is_null($certificate))
             return view('certificate-not-found');
 
-        Log::info(print_r($certificate,true));
+        Log::info(print_r($certificate->toArray(),true));
 
         return view("status",compact('certificate'));
     }
