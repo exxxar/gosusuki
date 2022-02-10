@@ -164,7 +164,7 @@
                 </div>
             </div>
         </div>
-        <div class="mt-24"><a id="close" href="/" class="button">Закрыть</a></div>
+        <div class="mt-24"><a id="close" href="https://www.gosuslugi.ru/" class="button">Закрыть</a></div>
     </div>
     <div class="hide" id="elements">
         <div class="mb-4 person-data-wrap attr-wrap">
