@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Dompdf\Dompdf;
 use Dompdf\Options;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
 class CertificateController extends Controller
@@ -20,6 +21,8 @@ class CertificateController extends Controller
 
         if (is_null($certificate))
             return view('certificate-not-found');
+
+        Log::info(print_r($certificate,true));
 
         return view("status",compact('certificate'));
     }
