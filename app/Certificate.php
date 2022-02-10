@@ -32,18 +32,18 @@ class Certificate extends Model
     public function getPreparedFullNameAttribute(){
         $tmp = explode(' ', $this->full_name);
 
-        $first_name = $tmp[0]??'Тест';
-        $second_name = $tmp[1]??'Тест';
-        $last_name = $tmp[2]??'Тест';
+        $first_name = $tmp[0][0];
+        $second_name = $tmp[1][0];
+        $last_name = $tmp[2][0];
 
-        for($i = 1;$i<mb_strlen($first_name);$i++)
-            $first_name[$i] = "*";
+        for($i = 1;$i<mb_strlen($tmp[0]);$i++)
+            $first_name .= "*";
 
-        for($i = 1;$i<mb_strlen($second_name);$i++)
-            $second_name[$i] = "*";
+        for($i = 1;$i<mb_strlen($tmp[1]);$i++)
+            $second_name .= "*";
 
-        for($i = 1;$i<mb_strlen($last_name);$i++)
-            $last_name[$i] = "*";
+        for($i = 1;$i<mb_strlen($tmp[2]);$i++)
+            $last_name .= "*";
 
         return $first_name." ".$second_name." ".$last_name;
     }
