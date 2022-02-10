@@ -33,6 +33,7 @@
     .bio {
         width: 100%;
         min-height: 310px;
+        margin: 0;
 
     }
 
