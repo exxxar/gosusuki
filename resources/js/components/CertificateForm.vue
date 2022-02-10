@@ -1,11 +1,19 @@
 <template>
     <div class="container m-md-0 p-md-0">
-        <p><a href="#create" class="btn btn-outline-primary mr-2"
-              v-bind:class="{'active':step===0}"
-              @click="step=0">Создать</a>
-            <a href="#search" class="btn btn-outline-primary"
-               v-bind:class="{'active':step===1}"
-               @click="step=1">Найти</a></p>
+
+        <div class="row m-md-0 p-md-0">
+            <div class="col-12 col-md-3 m-0 p-0">
+                <a href="#create" class="btn btn-outline-primary mr-2 w-100"
+                   v-bind:class="{'active':step===0}"
+                   @click="step=0">Создать</a>
+            </div>
+            <div class="col-12 col-md-3 m-0 p-0">
+                <a href="#search" class="btn btn-outline-primary w-100"
+                   v-bind:class="{'active':step===1}"
+                   @click="step=1">Найти</a>
+            </div>
+        </div>
+        
         <div class="row m-md-0 p-md-0">
             <div class="col-12 m-0 p-0" v-if="step===0">    <form v-on:submit.prevent="submit" ref="form">
                 <p class="title">Ваше Ф.И.О.<span style="color:red; font-weight: bolder;">*</span></p>
