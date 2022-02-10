@@ -34,8 +34,6 @@
     .bio {
         width: 100%;
         height: 310px;
-        display: flex;
-        justify-content: space-between;
 
     }
 
@@ -48,13 +46,7 @@
         color: gray;
     }
 
-    .half {
-        width: 50%;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        padding: 10px;
-    }
+
 
     .half p {
         width: 100%;
@@ -69,12 +61,12 @@
         font-weight: 600;
     }
 
-    .row {
+   /* .row {
         width: 100%;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
-    }
+    }*/
 
     .half.qr {
         display: flex;
