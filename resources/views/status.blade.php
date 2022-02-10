@@ -149,7 +149,7 @@
         </div>
         <div class="person-data person-data-attrs mt-24">
             <div id="full-name-block" class="mb-4 person-data-wrap attr-wrap">
-                <div id="full-name" class="attr-value title-h6 bold text-center">{{$certificate->full_name??'-'}}</div>
+                <div id="full-name" class="attr-value title-h6 bold text-center">{{$certificate->prepared_full_name??'-'}}</div>
             </div>
             <div id="other-attrs">
                 <div id="other-attrs">
