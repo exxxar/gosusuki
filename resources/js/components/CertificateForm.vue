@@ -3,17 +3,17 @@
 
         <div class="row m-md-0 p-md-0">
             <div class="col-12 col-md-3 m-0 p-0">
-                <a href="#create" class="btn btn-outline-primary mr-2 w-100"
+                <a href="#create" class="btn btn-outline-primary mb-2 w-100"
                    v-bind:class="{'active':step===0}"
                    @click="step=0">Создать</a>
             </div>
             <div class="col-12 col-md-3 m-0 p-0">
-                <a href="#search" class="btn btn-outline-primary w-100"
+                <a href="#search" class="btn btn-outline-primary mb-2 w-100"
                    v-bind:class="{'active':step===1}"
                    @click="step=1">Найти</a>
             </div>
         </div>
-        
+
         <div class="row m-md-0 p-md-0">
             <div class="col-12 m-0 p-0" v-if="step===0">    <form v-on:submit.prevent="submit" ref="form">
                 <p class="title">Ваше Ф.И.О.<span style="color:red; font-weight: bolder;">*</span></p>
@@ -26,15 +26,15 @@
                                               v-model="form.last_name" id="last_name" required></div>
                 </div>
 
-                <div class="bio row">
+                <div class="bio row m-md-0 p-md-0">
 
-                    <div class="col-md-6 col-12">
-                        <div class="row half">
-                            <div class="col-md-6 col-12">
+                    <div class="col-md-6 col-12 m-0 p-0">
+                        <div class="row half m-md-0 p-md-0">
+                            <div class="col-md-6 col-12 m-0 p-0">
                                 <p class="title">Дата рождения<span style="color:red; font-weight: bolder;">*</span></p>
                                 <input type="date" class="form-control" v-model="form.birthday" required>
                             </div>
-                            <div class="col-md-6 col-12">
+                            <div class="col-md-6 col-12 m-0 p-0">
                                 <p class="title">Пол<span style="color:red; font-weight: bolder;">*</span></p>
                                 <select v-model="form.sex" class="form-control" required>
                                     <option value="0" selected>Мужской</option>
@@ -42,15 +42,15 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="row half">
-                            <div class="col-md-6 col-12">
+                        <div class="row half m-md-0 p-md-0">
+                            <div class="col-md-6 col-12 m-0 p-0">
                                 <p class="title">Паспорт<span style="color:red; font-weight: bolder;">*</span></p>
                                 <input class="form-control" type="text"
                                        placeholder="#### ######"
                                        v-model="form.passport"
                                        v-mask="['#### ######']" name="passport" required>
                             </div>
-                            <div class="col-md-6 col-12">
+                            <div class="col-md-6 col-12 m-0 p-0">
                                 <p class="title">Загран паспорт</p>
                                 <input class="form-control" type="text"
                                        placeholder="## #######"
@@ -58,15 +58,15 @@
                                        v-mask="['## #######']" name="international_passport">
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6 col-12 half">
+                        <div class="row m-md-0 p-md-0">
+                            <div class="col-md-6 col-12 half m-0 p-0">
                                 <p class="title">СНИЛС<span style="color:red; font-weight: bolder;">*</span></p>
                                 <input class="form-control" type="text"
                                        placeholder="###-###-### ##"
                                        v-model="form.snils"
                                        v-mask="['###-###-### ##']" name="snils" required>
                             </div>
-                            <div class="col-md-6 col-12 half">
+                            <div class="col-md-6 col-12 half m-0 p-0">
                                 <p class="title">ОМС</p>
                                 <input class="form-control" type="text"
                                        placeholder="#### #### #### ####"
