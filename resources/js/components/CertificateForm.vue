@@ -124,7 +124,9 @@
                                     <a target="_blank" :href="certificate_link">Ссылка на проверку из QR-кода</a>
                                 </div>
                                 <p>Вы можете оставить пожертвование для разработчиков</p>
-                                <iframe src="https://widgets.freekassa.ru?type=payment-window&lang=ru&theme=light&default_amount=500&api_key=d147dced21162cfdcc48d05c0599f586&shopID=11933" width="300" height="590" frameborder="0"></iframe>
+
+                                <iframe src="https://yoomoney.ru/quickpay/shop-widget?writer=seller&targets=%D0%9E%D0%BF%D0%BB%D0%B0%D1%82%D0%B0%20%D1%83%D1%81%D0%BB%D1%83%D0%B3&targets-hint=&default-sum=500&button-text=14&hint=&successURL=&quickpay=shop&account=4100117588529694&" style="width: 100%;" height="223" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
+
                                 <p>Данный сертификат не для предвъявления по месту требования, а является демонстрационным
                                     примером.</p>
                                 <button class="btn btn-outline-primary">Получить сертификат</button>
