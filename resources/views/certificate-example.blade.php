@@ -2,9 +2,10 @@
 <html>
 <head>
     <title>Портал государственных услуг Российской Федерации</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 <style>
@@ -16,9 +17,9 @@
 
     *,
     p,
-    h1,h2,h3,
+    h1, h2, h3,
     body {
-        font-family:'Arial' !important;
+        font-family: 'Arial' !important;
     }
 
     .description {
@@ -30,7 +31,7 @@
     }
 
     .bio {
-        width:100%;
+        width: 100%;
         height: 310px;
         display: flex;
         justify-content: space-between;
@@ -43,12 +44,12 @@
     }
 
     td p.sub {
-        color:gray;
+        color: gray;
     }
 
 
     .half {
-        width:50%;
+        width: 50%;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
@@ -56,7 +57,7 @@
     }
 
     .full {
-        width:100%;
+        width: 100%;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
@@ -73,7 +74,7 @@
 
     .full p.title,
     .half p.title {
-        color:gray;
+        color: gray;
     }
 
     .row {
@@ -83,7 +84,7 @@
         flex-wrap: wrap;
     }
 
-    .half.qr{
+    .half.qr {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -144,12 +145,14 @@
                     <p>{{$certificate->oms??'-'}}</p>
                 </div>
             </div>
-            <div class="row">
-                <div class="full">
-                    <p class="title">ИНН</p>
-                    <p>{{$certificate->inn??'-'}}</p>
+            @if(!is_null($certificate->inn))
+                <div class="row">
+                    <div class="full">
+                        <p class="title">ИНН</p>
+                        <p>{{$certificate->inn??'-'}}</p>
+                    </div>
                 </div>
-            </div>
+            @endif
         </div>
 
         <div class="half qr">
