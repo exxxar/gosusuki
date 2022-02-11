@@ -63,7 +63,7 @@ class CertificateController extends Controller
             "snils" => $request->snils ?? null,
             "inn" => $request->inn ?? null,
             "oms" => $request->oms ?? null,
-            "international_passport" => $request->international_passport ?? '',
+            "international_passport" => $request->international_passport ?? null,
             "sex" => $request->sex,
             "unrz_number" => $request->unrz_number,
             "drug_name" => $request->drug_name,
