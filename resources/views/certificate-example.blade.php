@@ -177,7 +177,7 @@
                 <p class="sub">
                     {{$certificate->drug_creator}}, {{$certificate->drug_serial}}
                 </p>
-                <p>{{\Carbon\Carbon::parse($certificate->drug_creation_date)->subMonths(6)}}/p>
+                <p>{{\Carbon\Carbon::parse($certificate->drug_creation_date)->subMonths(6)}}</p>
             </td>
             <td> {{$certificate->medical_organization}}</td>
         </tr>
