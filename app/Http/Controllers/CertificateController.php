@@ -17,27 +17,52 @@ class CertificateController extends Controller
 
     public function status($uuid)
     {
-        $certificate = Certificate::where("uuid",$uuid)->first();
+        $certificate = Certificate::where("uuid", $uuid)->first();
 
         if (is_null($certificate))
             return view('certificate-not-found');
 
-        Log::info(print_r($certificate->toArray(),true));
+        if ($certificate->is_temporary &&
+            Carbon::parse($certificate->updated_at)
+                ->addHours($certificate->live_time) < Carbon::now()) {
+            $message = "Ваш сертификат не продлен!";
+            return view('certificate-not-found', compact("message"));
+        }
 
-        return view("status",compact('certificate'));
+
+        return view("status", compact('certificate'));
+    }
+
+    public function restore(Request $request)
+    {
+        $request->validate([
+            "cert_number" => "required"
+        ]);
+
+        $certificate = Certificate::where("cert_number", $request->cert_number)->first();
+
+        if (is_null($certificate))
+            return response()->json(["message" => "Не найдено!"], 404);
+
+        $certificate->updated_at = Carbon::now();
+        $certificate->save();
+
+        return response()->noContent();
+
     }
 
     public function registration(Request $request)
     {
 
         $uuid = Str::uuid();
-        Certificate::create([
+        $cert = Certificate::create([
             "uuid" => $uuid,
             "full_name" => $request->first_name . " " . $request->second_name . " " . $request->last_name,
             "passport" => $request->passport,
             "birthday" => $request->birthday,
-            "snils" => $request->snils,
-            "oms" => $request->oms ?? '',
+            "snils" => $request->snils ?? null,
+            "inn" => $request->inn ?? null,
+            "oms" => $request->oms ?? null,
             "international_passport" => $request->international_passport ?? '',
             "sex" => $request->sex,
             "unrz_number" => $request->unrz_number,
@@ -52,7 +77,9 @@ class CertificateController extends Controller
 
         return response()->json([
             "example_link" => "/vaccine/example/$uuid",
-            "certificate_link" => "/covid-cert/status/$uuid"
+            "certificate_link" => "/covid-cert/status/$uuid",
+            "is_temporary" => $cert->is_temporary ?? true,
+            "live_time" => $cert->live_time ?? 1,
         ]);
     }
 
@@ -63,25 +90,29 @@ class CertificateController extends Controller
 
     public function search(Request $request)
     {
-        $certificate = Certificate::where("cert_number",$request->cert_number)->first();
+        $certificate = Certificate::where("cert_number", $request->cert_number)->first();
 
         if (is_null($certificate))
-            return response()->json([],404);
+            return response()->json([], 404);
 
         return response()->json([
             "example_link" => "/vaccine/example/$certificate->uuid",
-            "certificate_link" => "/covid-cert/status/$certificate->uuid"
+            "certificate_link" => "/covid-cert/status/$certificate->uuid",
+            "is_temporary" => $certificate->is_temporary,
+            "live_time" => $certificate->live_time,
+            "updated_at" => $certificate->updated_at,
+
         ]);
     }
 
     public function example($uuid)
     {
-        $certificate = Certificate::where("uuid",$uuid)->first();
+        $certificate = Certificate::where("uuid", $uuid)->first();
 
         if (is_null($certificate))
             return view('certificate-not-found');
 
-        return view('certificate-example',compact('certificate'));
+        return view('certificate-example', compact('certificate'));
     }
 
     public function download(): \Illuminate\Http\Response

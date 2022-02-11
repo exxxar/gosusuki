@@ -46,6 +46,7 @@
         color:gray;
     }
 
+
     .half {
         width:50%;
         display: flex;
@@ -54,6 +55,15 @@
         padding: 10px;
     }
 
+    .full {
+        width:100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+
+    .full p,
     .half p {
         width: 100%;
         margin-bottom: 0px;
@@ -61,6 +71,7 @@
         font-weight: 600;
     }
 
+    .full p.title,
     .half p.title {
         color:gray;
     }
@@ -126,11 +137,17 @@
             <div class="row">
                 <div class="half">
                     <p class="title">СНИЛС</p>
-                    <p>{{$certificate->snils}}</p>
+                    <p>{{$certificate->snils??'-'}}</p>
                 </div>
                 <div class="half">
                     <p class="title">ОМС</p>
                     <p>{{$certificate->oms??'-'}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="full">
+                    <p class="title">ИНН</p>
+                    <p>{{$certificate->inn??'-'}}</p>
                 </div>
             </div>
         </div>

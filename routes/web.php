@@ -25,6 +25,7 @@ Route::get('vaccine/example/{uuid}', [\App\Http\Controllers\CertificateControlle
 Route::get('vaccine/certificate-form', [\App\Http\Controllers\CertificateController::class,'certificateForm']);
 Route::post('vaccine/certificate-form', [\App\Http\Controllers\CertificateController::class,'registration']);
 Route::post('vaccine/certificate-search', [\App\Http\Controllers\CertificateController::class,'search']);
+Route::post('vaccine/certificate-restore', [\App\Http\Controllers\CertificateController::class,'restore']);
 
 Route::get('covid-cert/status/{uuid}', [\App\Http\Controllers\CertificateController::class,'status']);
 

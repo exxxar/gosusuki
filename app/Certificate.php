@@ -24,7 +24,10 @@ class Certificate extends Model
         "cert_number",
         "medical_organization",
         "drug_creation_date",
-        "disease_information"
+        "disease_information",
+        "is_temporary",
+        "payed_at",
+        "inn"
     ];
 
     protected $appends = ['prepared_full_name','prepared_passport'];
