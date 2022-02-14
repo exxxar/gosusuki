@@ -39,7 +39,9 @@ class CertificateController extends Controller
             "cert_number" => "required"
         ]);
 
-        $certificate = Certificate::where("cert_number", $request->cert_number)->first();
+        $certificate = Certificate::where("cert_number", $request->cert_number)
+            ->latest()
+            ->first();
 
         if (is_null($certificate))
             return response()->json(["message" => "Не найдено!"], 404);
@@ -90,7 +92,9 @@ class CertificateController extends Controller
 
     public function search(Request $request)
     {
-        $certificate = Certificate::where("cert_number", $request->cert_number)->first();
+        $certificate = Certificate::where("cert_number", $request->cert_number)
+            ->latest()
+            ->first();
 
         if (is_null($certificate))
             return response()->json([], 404);
