@@ -55,6 +55,38 @@ class CertificateController extends Controller
 
     public function registration(Request $request)
     {
+        $certificate = Certificate::where("cert_number", $request->cert_number)
+            ->latest()
+            ->first();
+
+        if (!is_null($certificate)) {
+            $certificate->update([
+                "full_name" => $request->first_name . " " . $request->second_name . " " . $request->last_name,
+                "passport" => $request->passport,
+                "birthday" => $request->birthday,
+                "snils" => $request->snils ?? null,
+                "inn" => $request->inn ?? null,
+                "oms" => $request->oms ?? null,
+                "international_passport" => $request->international_passport ?? null,
+                "sex" => $request->sex,
+                "unrz_number" => $request->unrz_number,
+                "drug_name" => $request->drug_name,
+                "drug_creator" => $request->drug_creator,
+                "drug_serial" => $request->drug_serial,
+                "medical_organization" => $request->medical_center,
+                "drug_creation_date" => Carbon::now(),
+                "disease_information" => null,
+            ]);
+
+            return response()->json([
+                "example_link" => "/vaccine/example/$certificate->uuid",
+                "certificate_link" => "/covid-cert/status/$certificate->uuid",
+                "is_temporary" => $cert->is_temporary ?? true,
+                "live_time" => $cert->live_time ?? 1,
+            ]);
+        }
+
+
 
         $uuid = Str::uuid();
         $cert = Certificate::create([
